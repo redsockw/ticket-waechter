@@ -1,0 +1,60 @@
+{
+  "spiele": {
+    "nr542": {
+      "begegnung": "FC Bayern - SK Slavia Praha",
+      "datum": "08.12.2026",
+      "karten": {
+        "Sitz Kat2": 0,
+        "Sitz Kat3": 0,
+        "Sitz Kat4": 0,
+        "Steh Kat5": 0,
+        "nur Bus": 8
+      },
+      "liga": "CL",
+      "link": "https://www.wredsocks.de/hiv/kartenkauf.php?nr=542",
+      "ort": "Heim"
+    },
+    "nr544": {
+      "begegnung": "FC Bayern - Hertha BSC",
+      "datum": "01.12.2026",
+      "karten": {
+        "Sitz Kat2": 0,
+        "Sitz Kat3": 0,
+        "Sitz Kat4": 0,
+        "Steh Kat5": 0,
+        "nur Bus": 8
+      },
+      "liga": "DFB",
+      "link": "https://www.wredsocks.de/hiv/kartenkauf.php?nr=544",
+      "ort": "Heim"
+    },
+    "nr545": {
+      "begegnung": "FC Bayern - Paderborn",
+      "datum": "04.12.2026",
+      "karten": {
+        "Sitz Kat2": 0,
+        "Sitz Kat3": 17,
+        "Sitz Kat4": 0,
+        "Steh Kat5": 0,
+        "nur Bus": 9
+      },
+      "liga": "BL",
+      "link": "https://www.wredsocks.de/hiv/kartenkauf.php?nr=545",
+      "ort": "Heim"
+    },
+    "nr546": {
+      "begegnung": "FC Bayern - Werder Bremen",
+      "datum": "18.12.2026",
+      "karten": {
+        "Sitz Kat2": 0,
+        "Sitz Kat3": 33,
+        "Sitz Kat4": 0,
+        "Steh Kat5": 1,
+        "nur Bus": 12
+      },
+      "liga": "BL",
+      "link": "https://www.wredsocks.de/hiv/kartenkauf.php?nr=546",
+      "ort": "Heim"
+    }
+  }
+}
