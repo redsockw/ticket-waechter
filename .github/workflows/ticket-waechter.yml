@@ -1,0 +1,63 @@
+name: Ticket-Wächter
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # alle 10 Minuten (GitHub startet oft ein paar Minuten später)
+    - cron: "17 4 * * 1"     # montags: hält den Zeitplan aktiv (siehe Schritt "Keepalive")
+  workflow_dispatch:
+    inputs:
+      testnachricht:
+        description: "Aktuelle Übersicht als Testnachricht schicken"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # state.json zurückschreiben
+  actions: write    # Keepalive
+
+concurrency:
+  group: ticket-waechter
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Kartenkontingent prüfen
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}             # optional
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}   # optional (WhatsApp)
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }} # optional (WhatsApp)
+          TESTNACHRICHT: ${{ github.event_name == 'workflow_dispatch' && inputs.testnachricht }}
+        run: |
+          if [ "$TESTNACHRICHT" = "true" ]; then
+            python3 check_tickets.py --test
+          else
+            python3 check_tickets.py
+          fi
+
+      - name: Stand speichern
+        if: always()   # auch speichern, wenn nur ein Kanal gescheitert ist
+        run: |
+          if [ -n "$(git status --porcelain -- state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git commit -m "Kartenstand aktualisiert"
+            git pull --rebase --quiet
+            git push
+          else
+            echo "Keine Änderung am Stand."
+          fi
+
+      # GitHub pausiert Zeitpläne in öffentlichen Repos nach 60 Tagen ohne
+      # Aktivität (z. B. in der Sommerpause). Das hier verhindert das.
+      - name: Keepalive
+        if: github.event.schedule == '17 4 * * 1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/ticket-waechter.yml/enable"
