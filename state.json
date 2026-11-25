@@ -8,7 +8,7 @@
         "Sitz Kat3": 0,
         "Sitz Kat4": 0,
         "Steh Kat5": 0,
-        "nur Bus": 8
+        "nur Bus": 6
       },
       "liga": "CL",
       "link": "https://www.wredsocks.de/hiv/kartenkauf.php?nr=542",
@@ -35,7 +35,7 @@
         "Sitz Kat2": 0,
         "Sitz Kat3": 17,
         "Sitz Kat4": 0,
-        "Steh Kat5": 0,
+        "Steh Kat5": 1,
         "nur Bus": 9
       },
       "liga": "BL",
