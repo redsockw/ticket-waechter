@@ -19,7 +19,7 @@
       "datum": "01.12.2026",
       "karten": {
         "Sitz Kat2": 0,
-        "Sitz Kat3": 0,
+        "Sitz Kat3": 2,
         "Sitz Kat4": 0,
         "Steh Kat5": 1,
         "nur Bus": 8
@@ -33,7 +33,7 @@
       "datum": "04.12.2026",
       "karten": {
         "Sitz Kat2": 0,
-        "Sitz Kat3": 17,
+        "Sitz Kat3": 0,
         "Sitz Kat4": 0,
         "Steh Kat5": 1,
         "nur Bus": 9
