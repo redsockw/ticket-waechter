@@ -7,7 +7,7 @@
         "Sitz Kat2": 0,
         "Sitz Kat3": 0,
         "Sitz Kat4": 0,
-        "Steh Kat5": 0,
+        "Steh Kat5": 1,
         "nur Bus": 6
       },
       "liga": "CL",
@@ -21,7 +21,7 @@
         "Sitz Kat2": 0,
         "Sitz Kat3": 0,
         "Sitz Kat4": 0,
-        "Steh Kat5": 0,
+        "Steh Kat5": 1,
         "nur Bus": 8
       },
       "liga": "DFB",
@@ -47,7 +47,7 @@
       "datum": "18.12.2026",
       "karten": {
         "Sitz Kat2": 0,
-        "Sitz Kat3": 27,
+        "Sitz Kat3": 18,
         "Sitz Kat4": 0,
         "Steh Kat5": 0,
         "nur Bus": 10
